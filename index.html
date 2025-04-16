@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para una amiga especial</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #c084fc, #9333ea);
+      font-family: 'Segoe Script', cursive;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contenedor-corazones {
+      position: relative;
+      width: 75vmin;
+      height: 75vmin;
+      margin-top: 30px;
+      min-width: 320px;
+      min-height: 320px;
+    }
+
+    .imagen-bonita {
+      position: absolute;
+      width: 22vmin;
+      height: 22vmin;
+      padding: 4px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #ff66cc, #66ccff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .imagen-bonita img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    .norte  { top: 0; left: 50%; transform: translate(-50%, -30%); }
+    .sur    { bottom: 0; left: 50%; transform: translate(-50%, 30%); }
+    .este   { top: 50%; right: 0; transform: translate(30%, -50%); }
+    .oeste  { top: 50%; left: 0; transform: translate(-30%, -50%); }
+
+    .frase-centro {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 1px 1px 4px #000;
+      padding: 20px 25px;
+      border-radius: 20px;
+      z-index: 2;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .firma {
+      margin-top: 58px;
+      font-size: 1rem;
+      color: #d1fae5;
+      font-family: 'Segoe Script', cursive;
+      text-shadow: 1px 1px 3px #000;
+      z-index: 3;
+      animation: aparecerFirma 3s ease-in-out forwards;
+    }
+
+    @keyframes aparecerFirma {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 500px) {
+      .contenedor-corazones {
+        width: 85vmin;
+        height: 85vmin;
+      }
+
+      .imagen-bonita {
+        width: 20vmin;
+        height: 20vmin;
+      }
+
+      .frase-centro {
+        font-size: 1.3rem;
+        padding: 16px 20px;
+      }
+
+      .firma {
+        font-size: 0.9rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor-corazones">
+    <a href="secundaria.html?id=1" class="imagen-bonita norte">
+      <img src="imagen1.jpg" alt="Imagen 1">
+    </a>
+    <a href="secundaria.html?id=2" class="imagen-bonita sur">
+      <img src="imagen2.jpg" alt="Imagen 2">
+    </a>
+    <a href="secundaria.html?id=3" class="imagen-bonita este">
+      <img src="imagen3.jpg" alt="Imagen 3">
+    </a>
+    <a href="secundaria.html?id=4" class="imagen-bonita oeste">
+      <img src="imagen4.jpg" alt="Imagen 4">
+    </a>    
+
+    <div class="frase-centro" id="frase">
+      Yeni 🩷<br>Ortiz
+    </div>
+  </div>
+
+  <div class="firma">
+    Con cariño, John Alexander 💚
+  </div>
+
+  <script>
+    const frase = document.getElementById("frase");
+    frase.addEventListener("click", () => {
+      window.location.href = "pagina_unica.html";
+    });
+  </script>
+
+</body>
+</html>

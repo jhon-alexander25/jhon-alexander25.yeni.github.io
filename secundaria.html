@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Página Especial</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(45deg, #8e44ad, #2980b9);
+      color: #2c3e50;
+      text-align: center;
+    }
+
+    .contenedor-cuadro {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .cuadro {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 10px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      animation: borderAnimation 4s infinite alternate;
+    }
+
+    @keyframes borderAnimation {
+      0% { box-shadow: 0 0 10px #f39c12; }
+      25% { box-shadow: 0 0 10px #e74c3c; }
+      50% { box-shadow: 0 0 10px #8e44ad; }
+      75% { box-shadow: 0 0 10px #2980b9; }
+      100% { box-shadow: 0 0 10px #2ecc71; }
+    }
+
+    .cuadro img {
+      width: 100%;
+      height: 250px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .cuadro p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #34495e;
+    }
+
+    .firma {
+      font-size: 18px;
+      color: #fff;
+      font-weight: bold;
+      margin-top: 30px;
+      opacity: 0;
+      animation: aparecer 6s forwards;
+    }
+
+    .cuadro {
+  display: none;
+}
+  
+    @keyframes aparecer {
+      0% {
+        opacity: 0;
+        letter-spacing: 10px;
+        transform: scale(0.8);
+        filter: blur(10px);
+      }
+      100% {
+        opacity: 1;
+        letter-spacing: normal;
+        transform: scale(1);
+        filter: blur(0);
+      }
+    }
+
+    button {
+      background-color: #ff9ff3;
+      color: #2c3e50;
+      border: none;
+      padding: 12px 28px;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      margin-top: 40px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    button:hover {
+      background-color: #f368e0;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .cuadro img {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor-cuadro">
+    <div class="cuadro" id="img1">
+      <img src="imagen1.jpg" alt="Imagen 1" />
+      <p>Prefiero ser quien apoya sin que se lo pidan, que quien observa sin mover un dedo</p>
+    </div>
+
+    <div class="cuadro" id="img2">
+      <img src="imagen2.jpg" alt="Imagen 2" />
+      <p>Mis ganas de terminar algo bien, valen más que la indiferencia de los que no hacen nada</p>
+    </div>
+
+    <div class="cuadro" id="img3">
+      <img src="imagen3.jpg" alt="Imagen 3" />
+      <p>
+        No siempre se trata de quién ayuda más, sino de quién no se rinde cuando los demás ya lo hicieron.
+      </p>
+    </div>
+
+    <div class="cuadro" id="img4">
+      <img src="imagen4.jpg" alt="Imagen 4" />
+      <p>Aunque nadie me ayude, sigo demostrando que puedo con todo, incluso con lo que duele.</p>
+    </div>
+  </div>
+
+  <div class="firma">
+    Con cariño, John Alexander para una gran amiga ❤️
+  </div>
+
+  <div>
+    <a href="index.html">
+      <button>Volver a la página principal</button>
+    </a>
+  </div>
+
+  <script>
+    // Obtener el parámetro "id" de la URL
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+  
+    if (id) {
+      const cuadro = document.getElementById("img" + id);
+      if (cuadro) {
+        cuadro.style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>
